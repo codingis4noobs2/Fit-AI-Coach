@@ -147,7 +147,7 @@ selected_workout_time = st.selectbox("How long do you want your workouts to be?"
 selected_workout_frequency = st.selectbox("How often do you work out?", workout_frequency_options)
 selected_work_schedule = st.selectbox("What is your work schedule like?", work_schedule_options)
 selected_daily_activity = st.selectbox("How would you describe your typical day?", daily_activity_choices)
-selected_body_sensitivity = ", ".join(st.multiselect("Do you struggle with any of the following? (Mutiple Options can be selected)", body_sensitivity_choices))
+selected_body_sensitivity = st.multiselect("Do you struggle with any of the following? (Mutiple Options can be selected)", body_sensitivity_choices)
 if "None" in selected_body_sensitivity:
     selected_body_sensitivity = ["None"]
 else:
