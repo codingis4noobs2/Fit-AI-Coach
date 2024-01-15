@@ -152,7 +152,7 @@ if "None" in selected_body_sensitivity:
     selected_body_sensitivity = ["None"]
 else:
     selected_body_sensitivity = [sensitivity for sensitivity in selected_body_sensitivity if sensitivity != "None"]
-st.write(", ".join(selected_body_sensitivity))
+st.write(selected_body_sensitivity)
 bad_habits_input = st.text_area("Having any bad habits? Write it down here:", placeholder="For e.g. Watching TV while eating, Smoking")
 bad_habits_input = "Nothing" if bad_habits_input == "" else bad_habits_input
 selected_fitness_goal = st.selectbox("What Is Your Main Goal?", dream_goal_options)
