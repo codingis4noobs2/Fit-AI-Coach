@@ -148,6 +148,11 @@ selected_workout_frequency = st.selectbox("How often do you work out?", workout_
 selected_work_schedule = st.selectbox("What is your work schedule like?", work_schedule_options)
 selected_daily_activity = st.selectbox("How would you describe your typical day?", daily_activity_choices)
 selected_body_sensitivity = ", ".join(st.multiselect("Do you struggle with any of the following? (Mutiple Options can be selected)", body_sensitivity_choices))
+if "None" in selected_body_sensitivity:
+    selected_body_sensitivity = ["None"]
+else:
+    selected_body_sensitivity = [sensitivity for sensitivity in selected_body_sensitivity if sensitivity != "None"]
+st.write(", ".join(selected_body_sensitivity))
 bad_habits_input = st.text_area("Having any bad habits? Write it down here:", placeholder="For e.g. Watching TV while eating, Smoking")
 bad_habits_input = "Nothing" if bad_habits_input == "" else bad_habits_input
 selected_fitness_goal = st.selectbox("What Is Your Main Goal?", dream_goal_options)
@@ -170,7 +175,7 @@ f"How long workouts: {selected_workout_time}, "+\
 f"Workout frequency: {selected_workout_frequency}, "+\
 f"User work schedule: {selected_work_schedule}, "+\
 f"Usual daily activity of user: {selected_daily_activity}, "+\
-f"Body Struggles: {selected_body_sensitivity}, "+\
+f"Body Struggles: {", ".join(selected_body_sensitivity)}, "+\
 f"Bad Habits: {bad_habits_input}, "+\
 f"Dream physique: {selected_fitness_goal}. "+\
 f"Carefully design a diet and exercise plan keeping this all information in mind. Recommend Items which can be easily locally in user's country. Do not give Diet and Exercise table togethor and Give some recommendations. Separate Diet Plan, Exercise Plan, Recommendations by --- at the end."
