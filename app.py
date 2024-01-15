@@ -175,7 +175,7 @@ f"How long workouts: {selected_workout_time}, "+\
 f"Workout frequency: {selected_workout_frequency}, "+\
 f"User work schedule: {selected_work_schedule}, "+\
 f"Usual daily activity of user: {selected_daily_activity}, "+\
-f"Body Struggles: {", ".join(selected_body_sensitivity)}, "+\
+f"Body Struggles: {(', '.join(selected_body_sensitivity))}, "+\
 f"Bad Habits: {bad_habits_input}, "+\
 f"Dream physique: {selected_fitness_goal}. "+\
 f"Carefully design a diet and exercise plan keeping this all information in mind. Recommend Items which can be easily locally in user's country. Do not give Diet and Exercise table togethor and Give some recommendations. Separate Diet Plan, Exercise Plan, Recommendations by --- at the end."
